@@ -6,17 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script type="text/javascript" src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
     <script type="text/javascript" src="china.js"></script>
+    <script type="text/javascript" src="getdate.js"></script>
     <title>疫情地图</title>
 </head>
 <body>
     <!--搜索框-->
-    <div class="row" style="background-color: silver; height: 50px">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日期 <input type="text" name="time"
-            id="time" placeholder="yyyy-MM-dd hh:mm:ss"> <input
-            type="button" value="查询" onclick="tu()">
-    </div>
+    <lable id="date">日期</lable>2020-
+    <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select>
   
-    <div id="main" style="width:600px;height: 500px"></div>
+
+    <script>
+
+    </script>
+
+    <div id="main" style="width:1280px;height: 960px"></div>
     <script>
          // 函数China_map 用来实现地图
         
@@ -47,7 +53,7 @@
  
                 //配置属性
                 series: [{
-                    name: '数据',
+                    name: '确诊人数',
                     type: 'map',
                     mapType: 'china',
                     roam: false,      // 禁止拖动地图
@@ -68,30 +74,30 @@
         function Data() {
             return 0;
         }
-        var mydata = [{name: '北京',value: Data()}, { name: '天津',value: Data()},
-            {name: '上海', value: Data() }, { name: '重庆',value: Data() },
-            {name: '河北',value: Data()}, { name: '河南', value: Data() },
-            {name: '云南', value: Data()}, { name: '辽宁',value: Data()},
-            {name: '黑龙江', value: Data()}, {name: '湖南',value: Data()},
-            {name: '安徽', value: Data()}, { name: '山东',value: Data()},
-            {name: '新疆', value: Data()}, {name: '江苏',value: Data()},
-            {name: '浙江',value: Data()}, {name: '江西',value: Data()},
-            {name: '湖北',value: Data()}, {name: '广西',value: Data()},
-            {name: '甘肃',value: Data()}, {name: '山西',value: Data()},
-            {name: '内蒙古',value: Data()}, {name: '陕西',value: Data()},
-            {name: '吉林',value: Data()}, {name: '福建',value: Data()},
-            {name: '贵州',value: Data()}, {name: '广东',value: Data()},
-            {name: '青海',value: Data()}, {name: '西藏',value: Data()},
-            {name: '四川',value: Data()}, {name: '宁夏',value: Data()},
-            {name: '海南',value: Data()}, {name: '台湾',value: Data()},
-            {name: '香港',value: Data()}, {name: '澳门',value: Data()}
+        var mydata = [{name: '北京',value: 436}, { name: '天津',value: 136},
+            {name: '上海', value: 346 }, { name: '重庆',value: 576 },
+            {name: '河北',value: 318}, { name: '河南', value: 1273 },
+            {name: '云南', value: 174}, { name: '辽宁',value: 125},
+            {name: '黑龙江', value: 482}, {name: '湖南',value: 1018},
+            {name: '安徽', value: 990}, { name: '山东',value: 760},
+            {name: '新疆', value: 76}, {name: '江苏',value: 631},
+            {name: '浙江',value: 1215}, {name: '江西',value: 935},
+            {name: '湖北',value: 67786}, {name: '广西',value: 252},
+            {name: '甘肃',value: 127}, {name: '山西',value: 133},
+            {name: '内蒙古',value: 75}, {name: '陕西',value: 245},
+            {name: '吉林',value: 93}, {name: '福建',value: 296},
+            {name: '贵州',value: 146}, {name: '广东',value: 1356},
+            {name: '青海',value: 18}, {name: '西藏',value: 1},
+            {name: '四川',value: 539}, {name: '宁夏',value: 75},
+            {name: '海南',value: 168}, {name: '台湾',value: 50},
+            {name: '香港',value: 134}, {name: '澳门',value: 10}
         ];
-        var data_obj = [{start: 500,end: 600}, 
-                        {start: 400,end: 500},
-                        {start: 300,end: 400}, 
-                        {start: 200,end: 300},
-                        {start: 100,end: 200}, 
-                        {start: 1,end: 100},
+        var data_obj = [{start: 10000}, 
+                        {start: 1000,end: 9999},
+                        {start: 500,end: 999}, 
+                        {start: 100,end: 499},
+                        {start: 10,end: 99}, 
+                        {start: 1,end: 9},
                         {start: 0,end: 0},
                     ]
         China_map('main',mydata,data_obj);   // 调用地图
