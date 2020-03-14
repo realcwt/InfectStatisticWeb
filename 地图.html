@@ -102,6 +102,42 @@
                     ]
         China_map('main',mydata,data_obj);   // 调用地图
     </script>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+   
+   
+    
+    
+    <div id="main2" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main2'));
+ 
+        // 指定图表的配置项和数据
+        var option = {
+            
+            tooltip: {},
+            legend: {
+                data:['人数']
+            },
+            xAxis: {
+                data: ["累计确诊","现有确诊","现有疑似","治愈","死亡",]
+            },
+            yAxis: {},
+            series: [{
+                name: '人数',
+                type: 'bar',
+                data: [81021, 12178, 115, 65649, 3194]
+            }]
+        };
+ 
+       
+        myChart.setOption(option);
+    </script>
+
+
+    
+
+
 </body>
  
 </html>
