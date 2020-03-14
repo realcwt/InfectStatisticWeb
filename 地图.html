@@ -117,14 +117,14 @@
             
             tooltip: {},
             legend: {
-                data:['人数']
+                data:['国内人数']
             },
             xAxis: {
                 data: ["累计确诊","现有确诊","现有疑似","治愈","死亡",]
             },
             yAxis: {},
             series: [{
-                name: '人数',
+                name: '国内人数',
                 type: 'bar',
                 data: [81021, 12178, 115, 65649, 3194]
             }]
@@ -133,7 +133,36 @@
        
         myChart.setOption(option);
     </script>
-
+    
+    
+    
+    <div id="main3" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main3'));
+ 
+        // 指定图表的配置项和数据
+        var option = {
+            
+            tooltip: {},
+            legend: {
+                data:['国际人数']
+            },
+            xAxis: {
+                data: ["累计确诊","现有确诊","治愈","死亡",]
+            },
+            yAxis: {},
+            series: [{
+                name: '国际人数',
+                type: 'bar',
+                data: [143387, 66335,  71647, 5405]
+                 
+            }]
+        };
+ 
+       
+        myChart.setOption(option);
+    </script>
 
     
 
