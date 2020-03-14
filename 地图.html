@@ -6,33 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script type="text/javascript" src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
     <script type="text/javascript" src="china.js"></script>
-    <script type="text/javascript" src="getdate.js"></script>
     <title>疫情地图</title>
 </head>
 <body>
-    <!--搜索框-->
-    <lable id="date">日期</lable>2020-
-    <select>
-        <option value="1">1</option>
-        <option value="2">2</option>
-    </select>
-  
 
-    <script>
-
-    </script>
-
-    <div id="main" style="width:1280px;height: 960px"></div>
+    <div id="main" style="width:960px;height: 480px"></div>
+    <p>3月14日更新</p>
     <script>
          // 函数China_map 用来实现地图
-        
         function China_map(id,mydata,data_obj) {      //id 初始化echarts的div  mydata数据（后端返回的数据）
             //初始化echarts实例
             var myChart = echarts.init(document.getElementById(id));
- 
             // 地图的echarts  使用制定的配置项和数据显示图表
             myChart.setOption({
-                backgroundColor: '#ccc',
                 title: {
                     text: '全国地图大数据',
                     subtext: '',
@@ -99,19 +85,13 @@
                     ]
         China_map('main',mydata,data_obj);   // 调用地图
     </script>
-    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-   
-   
-    
-    
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->    
     <div id="main2" style="width: 600px;height:400px;"></div>
     <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main2'));
- 
         // 指定图表的配置项和数据
         var option = {
-            
             tooltip: {},
             legend: {
                 data:['国内人数']
@@ -126,13 +106,9 @@
                 data: [81021, 12178, 115, 65649, 3194]
             }]
         };
- 
-       
         myChart.setOption(option);
     </script>
-    
-    
-    
+
     <div id="main3" style="width: 600px;height:400px;"></div>
     <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
@@ -140,7 +116,6 @@
  
         // 指定图表的配置项和数据
         var option = {
-            
             tooltip: {},
             legend: {
                 data:['国际人数']
@@ -153,11 +128,8 @@
                 name: '国际人数',
                 type: 'bar',
                 data: [143387, 66335,  71647, 5405]
-                 
             }]
         };
- 
-       
         myChart.setOption(option);
     </script>
 
