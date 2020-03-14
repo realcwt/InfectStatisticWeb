@@ -86,7 +86,7 @@
         China_map('main',mydata,data_obj);   // 调用地图
     </script>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->    
-    <div id="main2" style="width: 600px;height:400px;"></div>
+    <div id="main2" style="width: 400px;height:400px;"></div>
     <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main2'));
@@ -109,7 +109,7 @@
         myChart.setOption(option);
     </script>
 
-    <div id="main3" style="width: 600px;height:400px;"></div>
+    <div id="main3" style="width: 400px;height:400px;"></div>
     <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main3'));
@@ -132,7 +132,30 @@
         };
         myChart.setOption(option);
     </script>
-
+    
+    <div id="main4" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main4'));
+ 
+        // 指定图表的配置项和数据
+        var option = {
+            tooltip: {},
+            legend: {
+                data:['确诊人数变化']
+            },
+            xAxis: {
+                data: ["2.6","2.9","2.12","2.15","2.18","2.21","2.24","2.27","3.1","3.4","3.7","3.10","3.13"]
+            },
+            yAxis: {},
+            series: [{
+                name: '全国现有确诊人数',
+                type: 'line',
+                data: [29032, 36043, 52599, 57493, 57886, 53371, 47760, 40011, 32741, 25441, 20616, 16226, 12178]
+            }]
+        };
+        myChart.setOption(option);
+    </script>
     
 
 
